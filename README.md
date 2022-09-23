@@ -7,7 +7,7 @@ git clone https://github.com/trex-coe/qmckl_dgemm.git
 
 # Installation
 
-The simplest way to obtain the source files of QMCkl is to download a source
+The simplest way to obtain the source files of QMCkl\_dgemm is to download a source
 distribution. This particular repository is for maintainers, who write custom kernels.
 
 ## For maintainers
@@ -31,19 +31,32 @@ make check
 
 make
 make check
+make install
+```
+
+### Enable Fortran tests
+
+```
+./autogen.sh
+
+./configure --enable-blas CC=gcc FC=gfortran --enable-fortran
+
+make
+make check
+make install
 ```
 
 ## Linking to your program
 
-The `make install` command takes care of installing the QMCkl shared library on the user machine.
+The `make install` command takes care of installing the QMCkl\_dgemm shared library on the user machine.
 Once installed, add `-lqmckldgemm` to the list of compiler options.
 
 In some cases (e.g. when using custom `prefix` during configuration), the QMCkl library might end up installed in a directory, which is absent in the default `$LIBRARY_PATH`.
-In order to link the program against QMCkl, the search paths can be modified as follows:
+In order to link the program against QMCkl\_dgemm, the search paths can be modified as follows:
 
 `export LIBRARY_PATH=$LIBRARY_PATH:<path_to_qmckl_dgemm>/lib`
 
-(same holds for `$LD_LIBRARY_PATH`). The `<path_to_qmckl>` has to be replaced with the prefix used during the installation.
+(same holds for `$LD_LIBRARY_PATH`). The `<path_to_qmckl_dgemm>` has to be replaced with the prefix used during the installation.
 
 
 ------------------------------
