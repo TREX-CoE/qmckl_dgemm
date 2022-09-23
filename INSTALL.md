@@ -1,13 +1,41 @@
-# Installing
+# Installation
 
-## Using MKL
+The simplest way to obtain the source files of QMCkl\_dgemm is to download a source
+distribution. This particular repository is for maintainers, who write custom kernels.
+
+## For maintainers
+
+### Use Intel MKL for testing
 
 ```
-./configure  --enable-mkl=yes --with-mkl-dir=$MKLROOT --enable-best-link=no CC=icc FC=ifort 
+./autogen.sh
+
+./configure --enable-mkl CC=icc FC=ifort
+
+make
+make check
+```
+### Use OpebBlas or system Blas
+
+```
+./autogen.sh
+
+./configure --enable-blas CC=gcc FC=gfortran
+
+make
+make check
+make install
 ```
 
-## Using OpenBLAS
+### Enable Fortran tests
 
 ```
-./configure  --enable-openblas=yes --with-openblas-libdir=$CONDA_PREFIX --with-openblas-incdir=$CONDA_PREFIX --enable-best-link=no CC=gcc FC=gfortran
+./autogen.sh
+
+./configure --enable-blas CC=gcc FC=gfortran --enable-fortran
+
+make
+make check
+make install
 ```
+
