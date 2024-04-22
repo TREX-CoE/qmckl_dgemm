@@ -32,5 +32,9 @@ tests_test_f_LDFLAGS = -no-install
 
 endif
 
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = pkgconfig/qmckldgemm.pc
+
+
 check_PROGRAMS = $(TESTS)
 CLEANFILES = qmckl_dgemm.mod

@@ -33,6 +33,8 @@ AC_PROG_CC_C_O
 AM_PROG_CC_C_O
 
 PKG_PROG_PKG_CONFIG([])
+PKG_LIBS=""
+
 
 # Generate config
 AC_CONFIG_HEADERS([config.h])
@@ -277,7 +279,11 @@ else
 fi
 ##############################################################################
 
+PKG_LIBS="$PKG_LIBS $LIBS"
+
+
 AC_SUBST(CFLAGS)
+AC_SUBST(PKG_LIBS)
 AC_SUBST(AM_CFLAGS)
 AC_SUBST(AM_CPPFLAGS)
 AC_SUBST(AM_LDFLAGS)
