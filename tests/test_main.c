@@ -146,9 +146,9 @@ int main() {
 
 #else
 
-   enum CBLAS_ORDER order = CblasColMajor;
-   enum CBLAS_TRANSPOSE transA = CblasTrans;
-   enum CBLAS_TRANSPOSE transB = CblasTrans;
+   CBLAS_LAYOUT order = CblasColMajor;
+   CBLAS_TRANSPOSE transA = CblasTrans;
+   CBLAS_TRANSPOSE transB = CblasTrans;
 
   qmckl_unpack_matrix(packed_matrix_C, CUnpack, M, N);
 
